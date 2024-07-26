@@ -7,25 +7,27 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Images, Link2 } from "lucide-react";
 
-interface Props {}
+interface Props {
+  id?: string;
+}
 
 function CreatePostCard(props: Props) {
-  const {} = props;
+  const { id = "images" } = props;
 
   return (
     <div>
       <Card className="p-4 flex items-center">
         <Image className="h-10 w-fit mr-2" src={pfp} alt="pfp" />
-        <Link href="/r/images/create" className="w-full">
+        <Link href={`/r/${id}/create`} className="w-full">
           <Input placeholder="What's on your mind?" />
         </Link>
         <div className="flex ml-2 gap-x-2">
-          <Link href={"/r/images/create"}>
+          <Link href={`/r/${id}/create`}>
             <Button variant="secondary" size={"icon"}>
               <Images className=" h-4 w-4" />
             </Button>
           </Link>
-          <Link href={"/r/images/create"}>
+          <Link href={`/r/${id}/create`}>
             <Button variant="secondary" size={"icon"}>
               <Link2 className=" h-4 w-4" />
             </Button>

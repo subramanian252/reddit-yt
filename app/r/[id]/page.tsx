@@ -91,7 +91,7 @@ async function Page(props: Props) {
   return (
     <div className="max-w-[1000px] mx-auto flex gap-x-10 mt-4 mb-10">
       <div className="w-[65%] flex flex-col gap-y-5">
-        <CreatePostCard />
+        <CreatePostCard id={params.id} />
         {/* @ts-ignore */}
         {data?.posts.length === 0 ? (
           <div className="min-h-[400px] flex flex-col justify-center items-center gap-y-5">
